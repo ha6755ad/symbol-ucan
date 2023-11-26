@@ -1,0 +1,46 @@
+{
+  "name": "symbol-ucan",
+  "version": "0.0.0",
+  "description": "Symbol implementation of UCAN spec",
+  "source": "src/index.ts",
+  "unpkg": "lib/index.umd.js",
+  "main": "lib/index.js",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "test": "test",
+    "prebuild": "rimraf lib dist && node scripts/gen-version.js",
+    "build": "rm -rf lib && microbundle --tsconfig tsconfig.json --no-sourcemap",
+    "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ha6755ad/symbol-ucan.git"
+  },
+  "author": "iy foundation",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ha6755ad/symbol-ucan/issues"
+  },
+  "homepage": "https://github.com/ha6755ad/symbol-ucan#readme",
+  "devDependencies": {
+    "@types/ua-parser-js": "^0.7.36",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.1.0",
+    "microbundle": "^0.15.1",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@ucans/ucans": "^0.12.0",
+    "radash": "^11.0.0"
+  }
+}
